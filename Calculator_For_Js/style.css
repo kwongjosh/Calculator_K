@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+body{
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+body{
+    background-image: linear-gradient(to bottom right, rgba(79, 51, 176, 1), rgba(210, 53, 165));
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+.theme-toggler.active{
+    color: #333;
+}
+.theme-toggler.active::before{
+    background-color: #fff;
+}
+.theme-toggler::before{
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+#display{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    overflow-x: scroll;
+}
+#display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+button:hover{
+    transform: scale(1.1);
+}
+button#equal{
+    height: 220px;
+}
+
+button#zero{
+    width: 130px;
+}
+
+/* 白天主题 */
+.calculator{
+    background-color: #fff;
+}
+.calculator #display{
+    color: #0a1e23;
+}
+.calculator button#clear{
+    background-color: #ffd5d8;
+    color: #fc4552;
+}
+.calculator button#clear :hover{
+    background-color: #ad1620;
+    -webkit-box-shadow:10px 10px 10px #fc4552;
+    -moz-box-shadow:10px 10px 10px #fc4552;
+    box-shadow:10px 10px 10px #fc4552;
+}
+.calculator button.btn-number{
+    background-color: #c3eaff;
+    color: #fff;
+}
+.calculator button.btn-number :hover{
+    background-color: #2e6988;
+    -webkit-box-shadow: 10px 10px 10px #144c64;
+    -moz-box-shadow: 10px 10px 10px #144c64;
+    box-shadow: 10px 10px 10px #144c64;
+}
+.calculator button.btn-float{
+    background-color: #c3eaff;
+    color: #fff;
+}
+.calculator button.btn-float :hover{
+    background-color: #c3eaff;
+    -webkit-box-shadow: 10px 10px 10px #333ba7;
+    -moz-box-shadow: 10px 10px 10px #333ba7;
+    box-shadow: 10px 10px 10px #333ba7;
+    color: #b3e6fc;
+}
+.calculator button.btn-operator{
+    background-color: #ffd0fd;
+    color: #ff89fb;
+}
+.calculator button.btn-operator:hover{
+    background-color: #ffd0fd;
+    -webkit-box-shadow: #aa3da6;
+    -moz-box-shadow: #aa3da6;
+    box-shadow: #aa3da6;
+}
+.calculator button.btn-equal{
+    background-color: #adf9e7;
+    color: #ffffff;
+}
+.calculator button.btn-equal:hover{
+    background-color: #adf9e7;
+    -webkit-box-shadow: 10px 10px 10px #b3e6fc;
+    -moz-box-shadow: 10px 10px 10px #b3e6fc;
+    box-shadow: 10px 10px 10px #b3e6fc;
+    color: #fff;
+}
+.calculator button.btn-zero{
+    background-color:  #c3eaff;
+    color: #fff;
+}
+.calculator button.btn-zero:hover{
+    background-color:  #c3eaff;
+    -webkit-box-shadow: 10px 10px 10px #4491b3;
+    -moz-box-shadow: 10px 10px 10px #4491b3;
+    box-shadow: 10px 10px 10px #4491b3;
+    color: #fff;
+}
+.calculator button.btn-set{
+    background-color: #ade7f9;
+    color: #fff;
+}
+.calculator button.btn-set:hover{
+    background-color: #ade7f9;
+    -webkit-box-shadow: 10px 10px 10px #c0b3fc;
+    -moz-box-shadow: 10px 10px 10px #c0b3fc;
+    box-shadow: 10px 10px 10px #c0b3fc;
+    color: #fff;
+}
+
+/* 夜间主题 */
+.calculator.dark{
+    background-color: #071115;
+}
+.calculator.dark #display{
+    color: #f8fafd;
+}
+.calculator.dark button#clear{
+    background-color: #2d191e;
+    color: #bd3740;
+}
+.calculator.dark button#clear:hover{
+    background-color: #661a2d;
+    -webkit-box-shadow: 10px 10px 10px #bd3740;
+    -moz-box-shadow: 10px 10px 10px #bd3740;
+    box-shadow: 10px 10px 10px #bd3740;
+    color: #fff
+}
+.calculator.dark button.btn-number{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-number:hover{
+    background-color: #1b2f38;
+    -webkit-box-shadow: 10px 10px 10px #1b2f38;
+    -moz-box-shadow: 10px 10px 10px #1b2f38;    
+    box-shadow: 10px 10px 10px #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-float{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-float:hover{
+    background-color: #1b2f38;
+    -webkit-box-shadow: 10px 10px 10px #1b2f38;
+    -moz-box-shadow: 10px 10px 10px #1b2f38;
+    box-shadow: 10px 10px 10px #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-operator{
+    background-color: #2e1f39;
+    color: #aa00a4;
+}
+.calculator.dark button.btn-operator:hover{
+    background-color: #aa00a4;
+    -webkit-box-shadow: 10px 10px 10px #aa00a4;
+    -moz-box-shadow: 10px 10px 10px #aa00a4;
+    box-shadow: 10px 10px 10px #aa00a4;
+    color: #ffffff;
+}
+.calculator.dark button.btn-equal{
+    background-color: #223323;
+    color: #fff;
+}
+.calculator.dark button.btn-equal:hover{
+    background-color: #223323;
+    -webkit-box-shadow: 10px 10px 10px #223323;
+    -moz-box-shadow: 10px 10px 10px #223323;
+    box-shadow: 10px 10px 10px #223323;
+    color: #fff;
+}
+.calculator.dark button.btn-zero{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-zero:hover{
+    background-color: #1b2f38;
+    -webkit-box-shadow: 10px 10px 10px #1b2f38;
+    -moz-box-shadow: 10px 10px 10px #1b2f38;
+    box-shadow: 10px 10px 10px #1b2f38;
+    color: #f8fafb;
+}
+.calculator.dark button.btn-set{
+    background-color: #0b384d;
+    color: #fff;
+}
+.calculator.dark button.btn-set:hover{
+    background-color: #0b384d;
+    -webkit-box-shadow: 10px 10px 10px #0b384d;
+    -moz-box-shadow: 10px 10px 10px #0b384d;
+    box-shadow: 10px 10px 10px #0b384d;
+    color: #fff;
+}
